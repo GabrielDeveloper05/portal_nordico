@@ -1,0 +1,348 @@
+/* ========================================= */
+/* SECTIONS.CSS - Seções, Cards e Grids     */
+/* ========================================= */
+
+/* Container Principal */
+.container {
+    background-color: var(--cor-container);
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    max-width: 1200px;
+    transition: background-color 0.3s ease;
+}
+
+.container:hover {
+    background-color: var(--cor-destaque);
+}
+
+/* Seções Principais */
+section {
+    min-height: 80vh;
+    padding: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: var(--cor-container);
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: var(--sombra-container);
+    border: none;
+    position: relative;
+}
+
+section::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 30px;
+    background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15 0l15 15H0z' fill='%238B0000' fill-opacity='0.1'/%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    opacity: 0.5;
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    color: var(--cor-destaque);
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--cor-borda);
+    padding-bottom: 10px;
+}
+
+section p {
+    font-size: 1.1rem;
+    color: var(--cor-texto-secundario);
+    margin-bottom: 25px;
+}
+
+/* Layout (Imagem + Texto) */
+.myth-item {
+    display: flex;
+    flex-wrap: nowrap; /* Impede que quebre em telas pequenas */
+    align-items: flex-start; /* Alinha os itens ao topo */
+    gap: 30px; /* Espaço maior entre imagem e texto */
+}
+
+/* Layout Vertical (Imagem sobre Texto) */
+.myth-item.vertical {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: var(--cor-principal);
+    padding: 25px;
+    border-radius: 12px;
+    border-left: 5px solid var(--cor-destaque);
+    margin-bottom: 30px;
+    box-shadow: var(--sombra-container);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.myth-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra-elemento);
+}
+
+.myth-item img {
+    width: 300px; /* Largura maior para a imagem */
+    height: 400px; /* Altura proporcional */
+    object-fit: cover; /* Mantém a proporção da imagem */
+}
+    
+.myth-item.vertical img {
+    width: 600px; /* Largura maior para formato retangular */
+    height: 350px; /* Altura menor para formato retangular */
+    object-fit: contain; /* Garante que a imagem inteira seja visível */
+    margin-bottom: 20px; /* Espaço entre a imagem e o texto */
+    border-radius: 8px; /* Borda mais suave */
+    border: 3px solid var(--cor-borda);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.myth-item .myth-content {
+    flex: 1;
+    min-width: 300px;
+    padding: 10px;
+}
+
+.myth-item h3 {
+    font-size: 2rem;
+    color: var(--cor-destaque);
+    margin-bottom: 15px;
+    font-family: 'Cinzel', serif;
+    border-bottom: 2px solid var(--cor-borda);
+    padding-bottom: 10px;
+}
+
+.myth-item p {
+    font-size: 1.1rem;
+    color: var(--cor-texto-principal);
+    margin-bottom: 15px;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+/* Estilo para a Seção Nove Mundos */
+.mundos-grid {
+    display: grid;
+    /* Cria uma grade responsiva: 
+       - Tenta criar colunas de no mínimo 250px
+       - '1fr' faz com que se ajustem para preencher o espaço 
+    */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px; /* Espaço entre os blocos */
+    margin-top: 30px;
+}
+
+.mundo-item {
+    background-color: var(--cor-principal);
+    border: 2px solid var(--cor-borda);
+    border-radius: 8px;
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.mundo-item:hover {
+    transform: translateY(-5px); /* Efeito de "levantar" */
+    border-color: var(--cor-destaque);
+}
+
+.mundo-item h3 {
+    color: var(--cor-destaque);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.mundo-item p {
+    color: var(--cor-texto-secundario);
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+/* Estilo para a Seção Galeria */
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+}
+
+.galeria-item {
+    position: relative; /* Necessário para a legenda */
+    border-radius: 8px;
+    overflow: hidden; /* Garante que a imagem não saia da borda */
+    border: 3px solid var(--cor-borda);
+    cursor: pointer;
+    /* Força um cartão quadrado e altura fixa para consistência */
+    height: 250px;
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 100%;
+    /* Não cortar a imagem; encaixa inteira dentro do quadrado */
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    background-color: #f4f7f9; /* fundo neutro quando houver espaços */
+    transition: transform 0.4s ease;
+}
+
+.galeria-item:hover img {
+    transform: scale(1.1); /* Efeito de zoom */
+}
+
+.galeria-legenda {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(29, 43, 58, 0.85); /* Fundo semi-transparente */
+    color: var(--cor-destaque);
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    /* Transição suave para a legenda */
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+}
+
+.galeria-item:hover .galeria-legenda {
+    transform: translateY(0); /* Mostra a legenda ao passar o mouse */
+}
+
+/* Estilos específicos para a Seção Sobre */
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.tech-item {
+    background-color: var(--cor-principal);
+    border: 2px solid var(--cor-borda);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tech-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--cor-destaque);
+    box-shadow: var(--sombra-elemento);
+}
+
+.tech-item i {
+    font-size: 3rem;
+    color: var(--cor-destaque);
+    margin-bottom: 15px;
+    display: block;
+}
+
+.tech-item h4 {
+    color: var(--cor-destaque);
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    font-family: 'Cinzel', serif;
+}
+
+.tech-item p {
+    color: var(--cor-texto-secundario);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.tools-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.tool-item {
+    background-color: var(--cor-principal);
+    border: 2px solid var(--cor-borda);
+    border-radius: 10px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.tool-item:hover {
+    transform: translateY(-3px);
+    border-color: var(--cor-destaque);
+}
+
+.tool-item i {
+    font-size: 2.5rem;
+    color: var(--cor-destaque);
+    min-width: 60px;
+}
+
+.tool-item h4 {
+    color: var(--cor-destaque);
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    font-family: 'Cinzel', serif;
+}
+
+.tool-item p {
+    color: var(--cor-texto-secundario);
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.team-member {
+    background-color: var(--cor-principal);
+    border: 2px solid var(--cor-borda);
+    border-radius: 10px;
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    border-color: var(--cor-destaque);
+    box-shadow: var(--sombra-elemento);
+}
+
+.team-member i {
+    font-size: 3rem;
+    color: var(--cor-destaque);
+    margin-bottom: 15px;
+    display: block;
+}
+
+.team-member h4 {
+    color: var(--cor-destaque);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-family: 'Cinzel', serif;
+}
+
+.team-member p {
+    color: var(--cor-texto-secundario);
+    font-size: 0.9rem;
+    margin: 0;
+    font-style: italic;
+}

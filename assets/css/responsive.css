@@ -1,0 +1,395 @@
+/* ========================================= */
+/* RESPONSIVE.CSS - Media Queries Mobile    */
+/* ========================================= */
+
+/* Tablets e telas médias (768px e abaixo) */
+@media screen and (max-width: 768px) {
+    /* Navegação */
+    header nav {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 70px;
+        padding: 0 20px;
+        position: relative;
+    }
+    
+    .logo {
+        margin-bottom: 0;
+    }
+    
+    .logo-img {
+        height: 50px;
+    }
+    
+    /* Mostra o botão hambúrguer */
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    /* Menu de navegação mobile */
+    header nav ul {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background-color: var(--cor-principal);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 50px;
+        gap: 0;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 1001;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Menu ativo (visível) */
+    header nav ul.active {
+        transform: translateX(0);
+    }
+    
+    header nav ul li {
+        margin: 0;
+        width: 90%;
+        text-align: center;
+    }
+    
+    header nav ul li a {
+        display: block;
+        padding: 15px 20px;
+        font-size: 1.1rem;
+        width: 100%;
+        border-bottom: 1px solid var(--cor-borda);
+        background-color: rgba(139, 0, 0, 0.05);
+        margin-bottom: 5px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+    
+    header nav ul li a:hover {
+        background-color: rgba(139, 0, 0, 0.1);
+        transform: translateX(10px);
+    }
+    
+    /* Seções */
+    section {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    
+    section h2 {
+        font-size: 2rem;
+    }
+    
+    /* Layout myth-item */
+    .myth-item {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .myth-item img {
+        width: 100%;
+        height: 250px;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .myth-item.vertical img {
+        width: 100%;
+        height: 200px;
+        max-width: 500px;
+    }
+    
+    .myth-item .myth-content {
+        min-width: auto;
+    }
+    
+    /* Grids responsivos */
+    .mundos-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .galeria-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    
+    .tech-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+    }
+    
+    .tools-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .team-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    
+    /* Chat responsivo */
+    #chat-window {
+        width: 90vw;
+        height: 70vh;
+        right: 5vw;
+        bottom: 80px;
+    }
+    
+    #chat-body {
+        max-height: calc(70vh - 120px);
+    }
+    
+    /* Botões flutuantes */
+    #chat-button {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    #back-to-top {
+        width: 40px;
+        height: 40px;
+        right: 80px;
+        bottom: 20px;
+    }
+    
+    #back-to-top svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* Overlay para o menu mobile */
+    header nav ul.active::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+    }
+}
+
+/* Smartphones (480px e abaixo) */
+@media screen and (max-width: 480px) {
+    /* Navegação mobile já está configurada acima */
+    header nav {
+        padding: 0 15px;
+    }
+    
+    .mobile-menu-toggle {
+        width: 25px;
+        height: 25px;
+    }
+    
+    .hamburger-line {
+        height: 2px;
+    }
+    
+    header nav ul li a {
+        font-size: 1rem;
+        padding: 12px 15px;
+    }
+    
+    /* Seções */
+    section {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+    
+    section h2 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+    
+    section p {
+        font-size: 1rem;
+        text-align: justify;
+    }
+    
+    /* Títulos menores */
+    .myth-item h3 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    
+    /* Imagens menores */
+    .myth-item img {
+        height: 200px;
+    }
+    
+    .myth-item.vertical img {
+        height: 150px;
+    }
+    
+    /* Grids para mobile */
+    .galeria-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .galeria-item {
+        height: 200px;
+    }
+    
+    .tech-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .mundos-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Chat mobile otimizado */
+    #chat-window {
+        width: 95vw;
+        height: 80vh;
+        right: 2.5vw;
+        bottom: 70px;
+    }
+    
+    #chat-body {
+        max-height: calc(80vh - 120px);
+        padding: 10px;
+    }
+    
+    .chat-footer input {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+    
+    .chat-footer button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+    
+    /* Botões flutuantes menores */
+    #chat-button {
+        width: 45px;
+        height: 45px;
+        bottom: 15px;
+        right: 15px;
+    }
+    
+    #back-to-top {
+        width: 35px;
+        height: 35px;
+        right: 70px;
+        bottom: 15px;
+    }
+    
+    /* Texto menor em dispositivos muito pequenos */
+    .mundo-item p,
+    .tech-item p,
+    .tool-item p,
+    .team-member p {
+        font-size: 0.85rem;
+    }
+    
+    /* Ajustes de padding e margin */
+    .mundo-item,
+    .tech-item,
+    .tool-item,
+    .team-member {
+        padding: 15px;
+    }
+    
+    /* Container principal */
+    .container {
+        margin: 20px 10px;
+        padding: 15px;
+    }
+}
+
+/* Dispositivos muito pequenos (320px e abaixo) */
+@media screen and (max-width: 320px) {
+    section {
+        padding: 10px;
+    }
+    
+    section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .myth-item h3 {
+        font-size: 1.3rem;
+    }
+    
+    section p,
+    .myth-item p {
+        font-size: 0.9rem;
+    }
+    
+    #chat-window {
+        width: 98vw;
+        right: 1vw;
+    }
+    
+    .chat-footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .chat-footer input {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+/* Melhorias adicionais para touch devices */
+@media (hover: none) and (pointer: coarse) {
+    /* Remove hover effects em dispositivos touch */
+    .myth-item:hover,
+    .mundo-item:hover,
+    .galeria-item:hover,
+    .tech-item:hover,
+    .tool-item:hover,
+    .team-member:hover {
+        transform: none;
+    }
+    
+    /* Melhora a área de toque dos botões */
+    header nav ul li a {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    #chat-button,
+    #back-to-top,
+    .mobile-menu-toggle {
+        min-width: 44px;
+        min-height: 44px;
+    }
+    
+    /* Remove hover do menu hambúrguer em touch devices */
+    .mobile-menu-toggle:hover {
+        background: none;
+    }
+}
+
+/* Orientação landscape em dispositivos móveis */
+@media screen and (max-width: 768px) and (orientation: landscape) {
+    #chat-window {
+        height: 90vh;
+        width: 60vw;
+        right: 5vw;
+    }
+    
+    section {
+        padding: 15px 20px;
+    }
+    
+    .myth-item.vertical img {
+        height: 120px;
+    }
+}

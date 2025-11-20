@@ -1,0 +1,11 @@
+# Arquivo de senhas e segredos
+.env
+
+# Arquivos de backup
+*.backup
+*.backup.zip
+*.backup.zip.info
+backup/
+
+# Arquivos de sistema (só por garantia)
+.DS_Store

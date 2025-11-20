@@ -1,0 +1,16 @@
+/* ========================================= */
+/* STYLE.CSS - O Gerenciador de Estilos     */
+/* ========================================= */
+
+/* 1. Configurações Globais (deve vir primeiro) */
+@import url('assets/css/global.css');
+
+/* 2. Componentes Estruturais */
+@import url('assets/css/header.css');
+@import url('assets/css/sections.css');
+
+/* 3. Componentes Flutuantes */
+@import url('assets/css/chat.css');
+
+/* 4. Responsividade (deve vir POR ÚLTIMO) */
+@import url('assets/css/responsive.css');

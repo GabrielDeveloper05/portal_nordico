@@ -1,0 +1,195 @@
+/* ========================================= */
+/* CHAT.CSS - Chat e Botões Flutuantes      */
+/* ========================================= */
+
+/* Chat Flutuante */
+#chat-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--cor-destaque);
+    color: var(--cor-fundo);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    z-index: 1001;
+}
+
+#chat-button:hover {
+    transform: scale(1.1) rotate(5deg);
+    animation: pulseGlow 2s infinite;
+}
+
+#chat-button svg {
+    width: 30px;
+    height: 30px;
+}
+
+#chat-window {
+    /* Começa escondido */
+    display: none; 
+    
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 350px;
+    height: 500px;
+    background-color: #fff;
+    color: #333;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    
+    /* Organiza o chat (header, body, footer) em coluna */
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 1000;
+
+    /* Animação de entrada */
+    animation: slideIn 0.5s ease-out;
+}
+
+.chat-header {
+    background-color: var(--cor-destaque);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-header h3 {
+    color: var(--cor-fundo);
+    margin: 0;
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+#close-chat {
+    background: none;
+    border: none;
+    color: var(--cor-fundo);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+#close-chat:hover {
+    opacity: 0.8;
+}
+
+.chat-body, #chat-body {
+    flex: 1; /* Ocupa todo o espaço disponível */
+    padding: 15px;
+    overflow-y: auto; /* Adiciona scroll se as mensagens passarem da altura */
+    background-color: #f4f7f9;
+    max-height: calc(500px - 120px); /* Altura total do chat menos header e footer */
+    scrollbar-width: thin; /* Para Firefox */
+    scrollbar-color: var(--cor-destaque) #f4f7f9; /* Para Firefox */
+}
+
+/* Estilização da scrollbar para navegadores webkit (Chrome, Safari, etc) */
+#chat-body::-webkit-scrollbar, .chat-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+#chat-body::-webkit-scrollbar-track, .chat-body::-webkit-scrollbar-track {
+    background: #f4f7f9;
+    border-radius: 4px;
+}
+
+#chat-body::-webkit-scrollbar-thumb, .chat-body::-webkit-scrollbar-thumb {
+    background-color: var(--cor-destaque);
+    border-radius: 4px;
+}
+
+.chat-message {
+    margin-bottom: 10px;
+    animation: fadeIn 0.4s ease-out;
+}
+
+.chat-message.bot p {
+    background-color: var(--cor-borda);
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 15px 15px 15px 0;
+    max-width: 80%;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.chat-message.bot p:hover {
+    transform: translateY(-2px);
+}
+
+.chat-footer {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}
+
+.chat-footer input {
+    flex: 1;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    margin-right: 10px;
+}
+
+.chat-footer button {
+    background-color: var(--cor-destaque);
+    color: var(--cor-fundo);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.chat-footer button:hover {
+    transform: scale(1.05);
+    background-color: var(--cor-hover);
+    box-shadow: 0 2px 8px rgba(139, 0, 0, 0.3);
+}
+
+/* Botão Voltar ao Topo */
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 100px; /* Posição à esquerda do chat */
+    
+    background-color: var(--cor-destaque);
+    color: var(--cor-fundo);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    
+    /* Começa escondido */
+    display: none;
+    
+    /* Centraliza o ícone */
+    justify-content: center;
+    align-items: center;
+    
+    text-decoration: none;
+    z-index: 1001;
+    opacity: 0.8;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#back-to-top:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+#back-to-top svg {
+    width: 30px;
+    height: 30px;
+}
