@@ -1,0 +1,25 @@
+footer {
+    background-color: var(--cor-principal); /* Aquele azul escuro que já usamos */
+    color: var(--cor-texto-secundario); /* Cinza claro */
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 50px; /* Espaço para separar do conteúdo */
+    border-top: 2px solid var(--cor-borda);
+    font-size: 0.9rem;
+}
+
+footer strong {
+    color: var(--cor-destaque); /* O azul claro */
+}
+
+footer a {
+    color: var(--cor-destaque);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
