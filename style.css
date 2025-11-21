@@ -14,3 +14,6 @@
 
 /* 4. Responsividade (deve vir POR ÚLTIMO) */
 @import url('assets/css/responsive.css');
+
+/*5. Rodapé*/
+@import url('assets/css/footer.css')
