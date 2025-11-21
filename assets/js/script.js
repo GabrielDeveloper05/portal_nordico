@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sendButton = document.getElementById('send-button');
 
     // URL do seu backend. 
-    const API_URL = '/api/chat'; 
+    const API_URL = 'https://portal-nordico.onrender.com/api/chat';
 
     if (sendButton) sendButton.addEventListener('click', sendMessage);
     if (chatInput) chatInput.addEventListener('keypress', function(e) {
