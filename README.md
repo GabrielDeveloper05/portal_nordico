@@ -2,39 +2,9 @@
 
 Um portal interativo sobre mitologia nórdica com um Chatbot integrado via IA (Google Gemini).
 
-## 🚀 Como rodar este projeto
-
-Este projeto utiliza uma arquitetura Cliente-Servidor. Você precisa rodar o backend e o frontend.
-
-### Pré-requisitos
-
-- Node.js instalado
-- Uma chave de API do Google Gemini
-
-### Passo 1: Configuração
-
-1. Clone o repositório ou baixe os arquivos
-2. Abra o terminal na pasta do projeto
-3. Instale as dependências:
-   ```bash
-   npm install
-   ```
-
-### Passo 2: Configurar a API Key
-
-1. Crie um arquivo `.env` na raiz do projeto
-2. Adicione sua chave do Google Gemini:
-   ```
-   API_KEY=sua_chave_aqui
-   ```
-
-### Passo 3: Executar o projeto
-
-1. Inicie o servidor:
-   ```bash
-   node server.js
-   ```
-2. Abra seu navegador e acesse: `http://localhost:3000`
+## Entre no Site e Teste
+- O site ja estar no ar, só testar e matar suas curiosidades referente a Mitologia Nórdica
+URL : https://portal-nordico.vercel.app
 
 ## 🏗️ Estrutura do Projeto
 
@@ -128,27 +98,6 @@ portal_nordico-principal/
 - **GitHub Copilot**: Assistente de programação para otimização do código
 - **Visual Studio Code**: Editor de código
 - **Git**: Controle de versão
-
-## 📝 Scripts Disponíveis
-
-```bash
-# Instalar dependências
-npm install
-
-# Executar o servidor de desenvolvimento
-node server.js
-
-# O projeto estará disponível em http://localhost:3000
-```
-
-## 🌐 Deploy
-
-Para fazer deploy do projeto:
-
-1. Configure as variáveis de ambiente no seu provedor de hospedagem
-2. Certifique-se de que o Node.js está instalado no servidor
-3. Execute `npm install` para instalar as dependências
-4. Inicie o servidor com `node server.js`
 
 ## 📄 Licença
 
