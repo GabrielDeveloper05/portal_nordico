@@ -6,6 +6,13 @@ const cors = require('cors');       // habilita CORS entre frontend/backend
 require('dotenv').config();         // carrega API_KEY do arquivo .env
 
 const app = express();
+
+app.use(cors({
+    origin: "*",
+    methods: ["GET", "POST", "OPTIONS"],
+    allowedHeaders: ["Content-Type"]
+}));
+
 app.use(cors());
 app.use(express.json());
 
