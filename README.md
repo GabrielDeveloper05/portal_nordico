@@ -89,7 +89,7 @@ portal_nordico-principal/
 ## 👥 Equipe de Desenvolvimento
 
 - **Gabriel Pereira Sotero** - Desenvolvedor Frontend e Backend
-- **Samuel Batista Gonçalves** - Desenvolvedor Frontend e Designer
+- **Samuel Felipe Barreto Gonçalves** - Desenvolvedor Frontend e Designer
 - **Davi Carvalho Santos** - Desenvolvedor e Pesquisador de Conteúdo
 
 ## 🔧 Ferramentas de Desenvolvimento
